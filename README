@@ -1,0 +1,90 @@
+
+# ⚖️ Análise de Dados Jurídicos com IA e Streamlit
+
+Este projeto oferece uma **interface interativa em Streamlit** para análise exploratória e previsão de status de processos judiciais. Utiliza algoritmos de machine learning para prever resultados com base em características dos processos.
+
+## 🎯 Objetivo
+
+Permitir que usuários façam upload de datasets jurídicos fictícios e interajam com gráficos analíticos e previsões baseadas em aprendizado de máquina.
+
+---
+
+## 🚀 Funcionalidades
+
+### 🔍 Análise Exploratória
+
+- Visualização dos dados carregados (visão geral e dados nulos)
+- Distribuição dos tipos de processo
+- Áreas jurídicas mais recorrentes
+- Mapa de calor com a distribuição de processos por UF (geojson)
+- Tempo médio de tramitação de processos encerrados
+- Boxplot com valor da causa por área jurídica
+
+### 🤖 Previsão com IA
+
+- Treinamento de modelo de classificação (`RandomForestClassifier`)
+- Previsão do status do processo com base em:
+  - Tipo de processo
+  - Área jurídica
+  - Valor da causa
+  - Honorários advocatícios
+  - Provisão de risco
+- Exibição da matriz de confusão e relatório de classificação
+
+---
+
+## 🧪 Tecnologias Utilizadas
+
+| Ferramenta        | Finalidade                                         |
+|-------------------|----------------------------------------------------|
+| Python            | Linguagem de programação principal                 |
+| Streamlit         | Framework para criação da interface web            |
+| Pandas            | Manipulação de dados tabulares                     |
+| Seaborn / Matplotlib / Plotly | Visualizações e gráficos estatísticos  |
+| Scikit-learn      | Treinamento e avaliação do modelo de IA            |
+| GeoJSON           | Mapa interativo por Unidade Federativa (UF)        |
+
+---
+
+## 📂 Como usar
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/streamlit-analise-juridica.git
+   ```
+
+2. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Execute o app:
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+4. Envie um arquivo `.csv` com as colunas padrão do projeto:
+   - `data_abertura`, `data_ultima_movimentacao`, `data_encerramento`
+   - `tipo_processo`, `area_juridica`, `valor_causa`, `honorarios_advogado`, `provisao_risco`, `status_processo`, `uf_processo`
+
+---
+
+## 📎 Exemplo de Dataset
+
+Você pode gerar um dataset de exemplo usando o script [`gerar_dados.py`](../gerar_dados.py) disponível neste portfólio. Os arquivos `clientes.csv` e `processos_juridicos_complexo.csv` serão criados automaticamente.
+
+---
+
+## 📌 Observações
+
+- O modelo não é treinado previamente. O treinamento é feito com os dados enviados via upload.
+- Os dados utilizados são **100% sintéticos**, criados apenas para fins educacionais e demonstrações.
+
+---
+
+## 👨‍💼 Autor
+
+**Kelvin Santos Andrade**  
+Analista de Dados | Business Intelligence | Portfólio Profissional  
+🔗 [LinkedIn](https://www.linkedin.com/in/kelvinandradeworks/)  
+🔗 [Portfólio](https://ksaworks.github.io/portfolio_projetos/)
